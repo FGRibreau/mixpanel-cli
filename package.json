@@ -6,13 +6,13 @@
     "node": "6"
   },
   "scripts": {
-    "start": "node mixpanel-cli.js",
+    "start": "./mixpanel",
     "update": "updtr",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
   },
   "bin": {
-    "mixpanel": "bin/mixpanel-cli"
+    "mixpanel": "./mixpanel"
   },
   "main": "mixpanel-cli.js",
   "repository": {
