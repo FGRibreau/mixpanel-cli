@@ -1,1 +1,2 @@
 FROM node:6-onbuild
+ENV MIXPANEL_API_KEY
