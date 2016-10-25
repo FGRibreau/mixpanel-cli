@@ -1,6 +1,6 @@
 ### mixpanel-cli - A command-line tool to query Mixpanel API
 
-![deps](https://img.shields.io/david/fgribreau/mixpanel-cli.svg?style=flat) ![Version](https://img.shields.io/npm/v/mixpanel-cli.svg?style=flat) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg?style=flat) [![Docker hub](https://img.shields.io/docker/pulls/FGRibreau/mixpanel-cli.svg)](https://hub.docker.com/r/fgribreau/mixpanel-cli/) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
+![deps](https://img.shields.io/david/fgribreau/mixpanel-cli.svg?style=flat) ![Version](https://img.shields.io/npm/v/mixpanel-cli.svg?style=flat) [![Docker hub](https://img.shields.io/docker/pulls/FGRibreau/mixpanel-cli.svg)](https://hub.docker.com/r/fgribreau/mixpanel-cli/) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
 
 
 ## Shameless plug
