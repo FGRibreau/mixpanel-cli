@@ -1,8 +1,8 @@
 ### mixpanel-cli - A command-line tool to query Mixpanel API
 
-[![Circle CI](https://img.shields.io/circleci/project/FGRibreau/mixpanel-cli/master.svg?style=flat)](https://circleci.com/gh/FGRibreau/mixpanel-cli/tree/master) [![Coverage Status](https://img.shields.io/coveralls/FGRibreau/mixpanel-cli/master.svg)](https://coveralls.io/github/FGRibreau/mixpanel-cli?branch=master) ![deps](https://img.shields.io/david/fgribreau/mixpanel-cli.svg?style=flat) ![Version](https://img.shields.io/npm/v/mixpanel-cli.svg?style=flat) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg?style=flat)
+<!-- [![Circle CI](https://img.shields.io/circleci/project/FGRibreau/mixpanel-cli/master.svg?style=flat)](https://circleci.com/gh/FGRibreau/mixpanel-cli/tree/master) [![Coverage Status](https://img.shields.io/coveralls/FGRibreau/mixpanel-cli/master.svg)](https://coveralls.io/github/FGRibreau/mixpanel-cli?branch=master)  -->
 
-[![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg)
+![deps](https://img.shields.io/david/fgribreau/mixpanel-cli.svg?style=flat) ![Version](https://img.shields.io/npm/v/mixpanel-cli.svg?style=flat) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg?style=flat) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg)
 
 
 <!-- > Finally a **clear**, **succinct** and *safe* syntax to do Pattern Matching in modern JavaScript. [(backstory)](http://blog.fgribreau.com/2015/12/mixpanel-cli-pattern-matching-for-modern.html) -->
