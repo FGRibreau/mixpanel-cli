@@ -15,11 +15,23 @@
 Use this approach if you don't know/want to setup your NodeJS environment, that's what containers are good for.
 
 ```shell
-# add it (~/.bashrc or equivalent)
-echo 'alias mixpanel="docker run -it --rm -e MIXPANEL_API_KEY=$(printenv MIXPANEL_API_KEY) fgribreau/mixpanel-cli:latest ./mixpanel"' >> ~/.bashrc
+# open ~/.bashrc  (or equivalent)
+nano ~/.bashrc
+
+# edit it
+function mixpanel(){
+ docker run -it --rm -e MIXPANEL_API_KEY=$MIXPANEL_API_KEY fgribreau/mixpanel-cli:latest ./mixpanel $@
+}
+
+# save it
+
+# source it
 source ~/.bashrc
+
 # run it!
 mixpanel
+
+# done!
 ```
 
 ## Install (NodeJS)
