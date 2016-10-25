@@ -10,7 +10,19 @@
 
 <p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/19687045/2f893296-9ac4-11e6-9c5b-fca23436c2bc.gif" alt="mixpanel cli" title="mixpanel cli"></p>
 
-## Install
+## Install (docker 🐳)
+
+Use this approach if you don't know/want to install NodeJS.
+
+```shell
+# add it (~/.bashrc or equivalent)
+echo 'alias mixpanel="docker run -it --rm -e MIXPANEL_API_KEY=$(printenv MIXPANEL_API_KEY) fgribreau/mixpanel-cli:latest ./mixpanel"' >> ~/.bashrc
+source ~/.bashrc
+# run it!
+mixpanel
+```
+
+## Install (nodejs)
 
 ```
 npm i mixpanel-cli -S
@@ -19,7 +31,7 @@ npm i mixpanel-cli -S
 ## Currently supported
 
 ```
-$ mixpanel-cli
+$ mixpanel
 
 Commands:
   track                 Track an event
