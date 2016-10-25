@@ -97,5 +97,10 @@ Same as above but does `10` requests in parallel (`-P 10`)!
 cat user_ids.txt | xargs -P 10 -I {ProfileID} mixpanel people.set  --distinct_id {ProfileID} --prop MyProperty --to ValueToSet
 ```
 
+## Todo
+
+- [ ] More examples / better documentation (even if the CLI is completely documented)
+- [ ] Tests
+
 
 ## [Changelog](/CHANGELOG.md)
