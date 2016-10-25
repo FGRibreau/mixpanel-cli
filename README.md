@@ -12,7 +12,7 @@
 
 ## Install (docker 🐳)
 
-Use this approach if you don't know/want to install NodeJS.
+Use this approach if you don't know/want to setup your NodeJS environment, that's what containers are good for.
 
 ```shell
 # add it (~/.bashrc or equivalent)
