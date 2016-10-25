@@ -1,0 +1,468 @@
+[
+  {
+    "method": {
+      "name": "mixpanel.init",
+      "arguments": [
+        {
+          "name": "token",
+          "type": "String",
+          "isRequired": true,
+          "description": "Your Mixpanel API token"
+        },
+        {
+          "name": "config",
+          "type": "Object",
+          "isRequired": false,
+          "description": "A dictionary of config options to override"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "isRequired": false,
+          "description": "The name for the new mixpanel instance that you want created"
+        }
+      ]
+    },
+    "description": "This function initializes a new instance of the Mixpanel tracking object. All new instances are added to the main mixpanel object as sub properties (such as mixpanel.library_name) and also returned by this function. To define a second instance on the page, you would call:<code>mixpanel.init('new token', { your: 'config' }, 'library_name');\n</code>and use it like so:<code>mixpanel.library_name.track(...);\n</code>"
+  },
+  {
+    "method": {
+      "name": "mixpanel.push",
+      "arguments": [
+        {
+          "name": "item",
+          "type": "Array",
+          "isRequired": true,
+          "description": "A [function_name, args...] array to be executed"
+        }
+      ]
+    },
+    "description": "push() keeps the standard async-array-push behavior around after the lib is loaded. This is only useful for external integrations that do not wish to rely on our convenience methods (created in the snippet)."
+  },
+  {
+    "method": {
+      "name": "mixpanel.disable",
+      "arguments": [
+        {
+          "name": "events",
+          "type": "Array",
+          "isRequired": false,
+          "description": "An array of event names to disable"
+        }
+      ]
+    },
+    "description": "Disable events on the Mixpanel object. If passed no arguments, this function disables tracking of any event. If passed an array of event names, those events will be disabled, but other events will continue to be tracked.Note: this function does not stop other mixpanel functions from firing, such as register() or people.set()."
+  },
+  {
+    "method": {
+      "name": "mixpanel.track",
+      "arguments": [
+        {
+          "name": "event_name",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the event. This can be anything the user does - 'Button Click', 'Sign Up', 'Item Purchased', etc."
+        },
+        {
+          "name": "properties",
+          "type": "Object",
+          "isRequired": false,
+          "description": "A set of properties to include with the event you're sending. These describe the user who did the event or details about the event itself."
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback function will be called after tracking the event."
+        }
+      ]
+    },
+    "description": "Track an event. This is the most important and frequently used Mixpanel function."
+  },
+  {
+    "method": {
+      "name": "mixpanel.track_links",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "A valid DOM query, element or jQuery-esque list"
+        },
+        {
+          "name": "event_name",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the event to track"
+        },
+        {
+          "name": "properties",
+          "type": "Object or Function",
+          "isRequired": false,
+          "description": "A properties object or function that returns a dictionary of properties when passed a DOMElement"
+        }
+      ]
+    },
+    "description": "Track clicks on a set of document elements. Selector must be a valid query. Elements must exist on the page at the time track_links is called."
+  },
+  {
+    "method": {
+      "name": "mixpanel.track_forms",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "A valid DOM query, element or jQuery-esque list"
+        },
+        {
+          "name": "event_name",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the event to track"
+        },
+        {
+          "name": "properties",
+          "type": "Object or Function",
+          "isRequired": false,
+          "description": "This can be a set of properties, or a function that returns a set of properties after being passed a DOMElement"
+        }
+      ]
+    },
+    "description": "Track form submissions. Selector must be a valid query."
+  },
+  {
+    "method": {
+      "name": "mixpanel.time_event",
+      "arguments": [
+        {
+          "name": "event_name",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the event."
+        }
+      ]
+    },
+    "description": "Time an event by including the time between this call and a later 'track' call for the same event in the properties sent with the event."
+  },
+  {
+    "method": {
+      "name": "mixpanel.register",
+      "arguments": [
+        {
+          "name": "properties",
+          "type": "Object",
+          "isRequired": true,
+          "description": "An associative array of properties to store about the user"
+        },
+        {
+          "name": "days",
+          "type": "Number",
+          "isRequired": false,
+          "description": "How many days since the user's last visit to store the super properties"
+        }
+      ]
+    },
+    "description": "Register a set of super properties, which are included with all events. This will overwrite previous super property values."
+  },
+  {
+    "method": {
+      "name": "mixpanel.register_once",
+      "arguments": [
+        {
+          "name": "properties",
+          "type": "Object",
+          "isRequired": true,
+          "description": "An associative array of properties to store about the user"
+        },
+        {
+          "name": "default_value",
+          "type": "*",
+          "isRequired": false,
+          "description": "Value to override if already set in super properties (ex: 'False') Default: 'None'"
+        },
+        {
+          "name": "days",
+          "type": "Number",
+          "isRequired": false,
+          "description": "How many days since the users last visit to store the super properties"
+        }
+      ]
+    },
+    "description": "Register a set of super properties only once. This will not overwrite previous super property values, unlike register()."
+  },
+  {
+    "method": {
+      "name": "mixpanel.unregister",
+      "arguments": [
+        {
+          "name": "property",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the super property to remove"
+        }
+      ]
+    },
+    "description": "Delete a super property stored with the current user."
+  },
+  {
+    "method": {
+      "name": "mixpanel.identify",
+      "arguments": [
+        {
+          "name": "unique_id",
+          "type": "String",
+          "isRequired": false,
+          "description": "A string that uniquely identifies a user. If not provided, the distinct_id currently in the persistent store (cookie or localStorage) will be used."
+        }
+      ]
+    },
+    "description": "Identify a user with a unique ID. All subsequent actions caused by this user will be tied to this unique ID. This property is used to track unique visitors. If the method is never called, then unique visitors will be identified by a UUID generated the first time they visit the site."
+  },
+  {
+    "method": {
+      "name": "mixpanel.reset",
+      "arguments": []
+    },
+    "description": "Clears super properties and generates a new random distinct_id for this instance. Useful for clearing data when a user logs out."
+  },
+  {
+    "method": {
+      "name": "mixpanel.get_distinct_id",
+      "arguments": []
+    },
+    "description": "Returns the current distinct id of the user. This is either the id automatically generated by the library or the id that has been passed by a call to identify()."
+  },
+  {
+    "method": {
+      "name": "mixpanel.alias",
+      "arguments": [
+        {
+          "name": "alias",
+          "type": "String",
+          "isRequired": true,
+          "description": "A unique identifier that you want to use for this user in the future."
+        },
+        {
+          "name": "original",
+          "type": "String",
+          "isRequired": false,
+          "description": "The current identifier being used for this user."
+        }
+      ]
+    },
+    "description": "Create an alias, which Mixpanel will use to link two distinct_ids going forward (not retroactively). Multiple aliases can map to the same original ID, but not vice-versa. Aliases can also be chained - the following is a valid scenario:<code>mixpanel.alias('new_id', 'existing_id');\n...\nmixpanel.alias('newer_id', 'new_id');\n</code>If the original ID is not passed in, we will use the current distinct_id - probably the auto-generated GUID."
+  },
+  {
+    "method": {
+      "name": "mixpanel.set_config",
+      "arguments": [
+        {
+          "name": "config",
+          "type": "Object",
+          "isRequired": true,
+          "description": "A dictionary of new configuration values to update"
+        }
+      ]
+    },
+    "description": "Update the configuration of a mixpanel library instance.The default config is:<code>{\n  // super properties cookie expiration (in days)\n  cookie_expiration:          365\n\n  // super properties span subdomains\n  cross_subdomain_cookie:     true\n\n  // if this is true, the mixpanel cookie or localStorage entry\n  // will be deleted, and no user persistence will take place\n  disable_persistence:        false\n\n  // type of persistent store for super properties (cookie/\n  // localStorage) if set to 'localStorage', any existing\n  // mixpanel cookie value with the same persistence_name\n  // will be transferred to localStorage and deleted\n  persistence:                'cookie'\n\n  // name for super properties persistent store\n  persistence_name:           ''\n\n  // names of properties/superproperties which should never\n  // be sent with track() calls\n  property_blacklist:         []\n\n  // if this is true, mixpanel cookies will be marked as\n  // secure, meaning they will only be transmitted over https\n  secure_cookie:              false\n\n  // the amount of time track_links will\n  // wait for Mixpanel's servers to respond\n  track_links_timeout:        300\n\n  // should we track a page view on page load\n  track_pageview:             true\n\n  // if you set upgrade to be true, the library will check for\n  // a cookie from our old js library and import super\n  // properties from it, then the old cookie is deleted\n  // The upgrade config option only works in the initialization,\n  // so make sure you set it when you create the library.\n  upgrade:                    false\n}\n</code>"
+  },
+  {
+    "method": {
+      "name": "mixpanel.get_config",
+      "arguments": []
+    },
+    "description": "returns the current config object for the library."
+  },
+  {
+    "method": {
+      "name": "mixpanel.get_property",
+      "arguments": [
+        {
+          "name": "property_name",
+          "type": "String",
+          "isRequired": true,
+          "description": "The name of the super property you want to retrieve"
+        }
+      ]
+    },
+    "description": "Returns the value of the super property named property_name. If no such property is set, get_property() will return the undefined value."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.set",
+      "arguments": [
+        {
+          "name": "prop",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "If a string, this is the name of the property. If an object, this is an associative array of names and values."
+        },
+        {
+          "name": "to",
+          "type": "*",
+          "isRequired": false,
+          "description": "A value to set on the given property name"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Set properties on a user record."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.set_once",
+      "arguments": [
+        {
+          "name": "prop",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "If a string, this is the name of the property. If an object, this is an associative array of names and values."
+        },
+        {
+          "name": "to",
+          "type": "*",
+          "isRequired": false,
+          "description": "A value to set on the given property name"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Set properties on a user record, only if they do not yet exist. This will not overwrite previous people property values, unlike people.set()."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.increment",
+      "arguments": [
+        {
+          "name": "prop",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "If a string, this is the name of the property. If an object, this is an associative array of names and numeric values."
+        },
+        {
+          "name": "by",
+          "type": "Number",
+          "isRequired": false,
+          "description": "An amount to increment the given property"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Increment/decrement numeric people analytics properties."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.append",
+      "arguments": [
+        {
+          "name": "prop",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "If a string, this is the name of the property. If an object, this is an associative array of names and values."
+        },
+        {
+          "name": "value",
+          "type": "*",
+          "isRequired": false,
+          "description": "An item to append to the list"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Append a value to a list-valued people analytics property."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.union",
+      "arguments": [
+        {
+          "name": "prop",
+          "type": "Object or String",
+          "isRequired": true,
+          "description": "If a string, this is the name of the property. If an object, this is an associative array of names and values."
+        },
+        {
+          "name": "value",
+          "type": "*",
+          "isRequired": false,
+          "description": "Value / values to merge with the given property"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Merge a given list with a list-valued people analytics property, excluding duplicate values."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.track_charge",
+      "arguments": [
+        {
+          "name": "amount",
+          "type": "Number",
+          "isRequired": true,
+          "description": "The amount of money charged to the current user"
+        },
+        {
+          "name": "properties",
+          "type": "Object",
+          "isRequired": false,
+          "description": "An associative array of properties associated with the charge"
+        },
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called when the server responds"
+        }
+      ]
+    },
+    "description": "Record that you have charged the current user a certain amount of money. Charges recorded with track_charge() will appear in the Mixpanel revenue report."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.clear_charges",
+      "arguments": [
+        {
+          "name": "callback",
+          "type": "Function",
+          "isRequired": false,
+          "description": "If provided, the callback will be called after the tracking event"
+        }
+      ]
+    },
+    "description": "Permanently clear all revenue report transactions from the current user's people analytics profile."
+  },
+  {
+    "method": {
+      "name": "mixpanel.people.delete_user",
+      "arguments": []
+    },
+    "description": "Permanently deletes the current people analytics profile from Mixpanel (using the current distinct_id)."
+  }
+]

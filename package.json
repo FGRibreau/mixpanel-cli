@@ -1,0 +1,43 @@
+{
+  "name": "mixpanel-cli",
+  "version": "0.0.1",
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
+  "engines": {
+    "node": "6"
+  },
+  "scripts": {
+    "update": "updtr",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
+  },
+  "bin": {
+    "mixpanel": "bin/mixpanel-cli"
+  },
+  "main": "mixpanel-cli.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fgribreau/mixpanel-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fgribreau/mixpanel-cli/issues"
+  },
+  "homepage": "https://github.com/fgribreau/mixpanel-cli",
+  "keywords": [
+    "mixpanel",
+    "cli",
+    "mp",
+    "import",
+    "profile"
+  ],
+  "devDependencies": {
+    "conventional-changelog": "^1.1.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "updtr": "^0.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.16.4",
+    "mixpanel": "^0.5.0",
+    "yargs": "^6.3.0"
+  },
+  "license": "MIT"
+}
