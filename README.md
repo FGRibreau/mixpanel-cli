@@ -13,6 +13,7 @@
 - [**Charts, simple as a URL**. No more server-side rendering pain, 1 url = 1 chart](http://bit.ly/2e1wzfG)
 - [Looking for a free **Redis GUI**?](http://bit.ly/2e1xug6) [Or for **real-time alerting** & monitoring for Redis?](http://bit.ly/2e1y65v)
 
+<p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/19687045/2f893296-9ac4-11e6-9c5b-fca23436c2bc.gif" alt="mixpanel cli" title="mixpanel cli"></p>
 
 ## Install
 
