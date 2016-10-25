@@ -22,7 +22,7 @@ source ~/.bashrc
 mixpanel
 ```
 
-## Install (nodejs)
+## Install (NodeJS)
 
 ```
 npm i mixpanel-cli -S
