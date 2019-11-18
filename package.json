@@ -32,7 +32,7 @@
   ],
   "devDependencies": {
     "conventional-changelog": "^1.1.0",
-    "conventional-changelog-cli": "^1.2.0",
+    "conventional-changelog-cli": "^2.0.28",
     "updtr": "^0.2.1"
   },
   "dependencies": {
